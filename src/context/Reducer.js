@@ -8,6 +8,23 @@ export default function Reducer (state, action){
     const {payload, type} = action;
     switch (type){
         case LISTAME_PRODUCTOS:
+            console.log(payload);
             return{...state, productos: payload };
+        case AGREGAR_CARRITO:
+            return {
+                ...state,
+                carrito: [
+                    ...state.carrito,
+                    state.productos.filter((ite) => ite.id == parseInt(payload)),
+                ],
+            };
+        case ELIMINAR_CARRITO:
+            return {
+                ...state,
+                carrito: [
+                ...state.carrito,
+                    state.carrito.filter((items) => items[0].id !== parseInt(payload)),
+                    ],
+                };
     }
 }

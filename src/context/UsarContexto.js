@@ -18,8 +18,12 @@ export default function UsarContexto(props){
     };
     const agregarCarrito = (item) => {
         console.log("Agregamos a carrito", item);
+        dispatch({ type: "AGREGAR_CARRITO", payload: item })
     };
-    const eliminarCarrito = () => {};
+    const eliminarCarrito = (item) => {
+        console.log("Eliminar carrito", item);
+        dispatch({type: "ELIMINAR_CARRITO", payload: item });
+    };
     return (
         <Contexto.Provider 
             value={{

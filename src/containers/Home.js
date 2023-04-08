@@ -12,10 +12,9 @@ export default function Home() {
         <div classNameName="container">
             <div className="wraper">
                 <div className="home">
-                    {productos.map((item)=>(
+                    {productos.map((item) => (
                         <Item {...Item} key={item.id}></Item>
-                    ))
-                    }
+                    ))}
                 </div>
             </div>
         </div>
